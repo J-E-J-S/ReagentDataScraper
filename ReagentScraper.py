@@ -105,7 +105,7 @@ def graph_format(balanced_data):
     return countries, value_import, value_export, qnt_import, qnt_export
 
 def value_graph(countries, value_import, value_export):
-
+    ''' Creates a 2-part bar graph for values of import/export by country ''' 
     divisions = countries
     imports = value_import
     exports = value_export
