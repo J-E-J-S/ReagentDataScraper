@@ -124,6 +124,26 @@ def value_graph(countries, value_import, value_export):
 
     plt.show()
 
+def quantity_graph(countries, qnt_import, qnt_export):
+    ''' Creates a 2-part bar graph for values of import/export by country '''
+    divisions = countries
+    imports = qnt_import
+    exports = qnt_export
+
+    index = np.arange(len(divisions))
+    width = 0.20
+
+    plt.bar(index, imports, width, color='green', label='Net Import Quantity')
+    plt.bar(index+width, exports, width, color='blue', label='Net Export Quantity')
+    plt.title('Import/Export of Reagent Quantities (kg) by Country  - 2019')
+
+    plt.ylabel('Quantity (kg)')
+    plt.xlabel('Country')
+    plt.xticks(index + width/2, countries, rotation='vertical') # ticks to divide import / export
+    plt.legend(loc='best')
+
+    plt.show()
+
 
 def main():
 
@@ -142,7 +162,7 @@ def main():
 
     # Graphs
     value_graph(Countries, value_import, value_export)
-
+    quantity_graph(Countries, qnt_import, qnt_export)
 
 if __name__ == '__main__':
     main()
